@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import Animated, {interpolateColors, spring} from 'react-native-reanimated';
 
-import {Container, Content, Dot} from './styles';
+import {Container, Button, Label, Content, Dot} from './styles';
 
 interface Props {
   handleOnPress: any;
@@ -9,6 +9,7 @@ interface Props {
   inactiveTrackColor: string;
   thumbColor: string;
   value: boolean;
+  label: string;
 }
 
 const Switch: React.FC<Props> = ({
@@ -17,6 +18,7 @@ const Switch: React.FC<Props> = ({
   inactiveTrackColor,
   thumbColor,
   value,
+  label,
 }) => {
   const [switchTranslate] = useState(new Animated.Value(0));
 
@@ -56,31 +58,35 @@ const Switch: React.FC<Props> = ({
   }, [handleOnPress, value]);
 
   return (
-    <Container onPress={memoizedOnSwitchPressCallback}>
-      <Content style={interpolateBackgroundColor}>
-        <Dot
-          style={[
-            {
-              elevation: 4,
-              shadowColor: '#000',
-              shadowOffset: {
-                width: 0,
-                height: 2,
-              },
-              shadowOpacity: 0.23,
-              shadowRadius: 2.62,
-            },
-            {backgroundColor: thumbColor},
-            {
-              transform: [
-                {
-                  translateX: switchTranslate,
+    <Container>
+      <Label>{label}</Label>
+
+      <Button onPress={memoizedOnSwitchPressCallback}>
+        <Content style={interpolateBackgroundColor}>
+          <Dot
+            style={[
+              {
+                elevation: 4,
+                shadowColor: '#000',
+                shadowOffset: {
+                  width: 0,
+                  height: 2,
                 },
-              ],
-            },
-          ]}
-        />
-      </Content>
+                shadowOpacity: 0.23,
+                shadowRadius: 2.62,
+              },
+              {backgroundColor: thumbColor},
+              {
+                transform: [
+                  {
+                    translateX: switchTranslate,
+                  },
+                ],
+              },
+            ]}
+          />
+        </Content>
+      </Button>
     </Container>
   );
 };
