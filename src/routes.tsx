@@ -10,11 +10,12 @@ const Stack = createStackNavigator();
 
 const Routes: React.FC = () => {
   const {theme} = useTheme();
+
   return (
     <>
       <StatusBar
         backgroundColor={theme === 'dark' ? '#000' : '#ddd'}
-        barStyle={`${theme}-content`}
+        barStyle={theme === 'dark' ? 'light-content' : 'dark-content'}
       />
 
       <Stack.Navigator>
