@@ -12,3 +12,9 @@ export const Title = styled.Text`
   font-size: 18px;
   margin: 8px 0;
 `;
+
+export const Switches = styled.View`
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`;

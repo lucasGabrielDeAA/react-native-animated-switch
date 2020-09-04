@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
-import {Container, Title} from './styles';
+import {Container, Title, Switches} from './styles';
 
 import Switch from '../../components/Switch';
 
@@ -8,18 +8,6 @@ import {useTheme} from '../../hooks/useTheme';
 
 const Home: React.FC = () => {
   const {toggleTheme, theme} = useTheme();
-
-  const [activeTrackColor, setActiveTrackColor] = useState(
-    theme === 'dark' ? '#fa0' : '#aaa',
-  );
-  const [inactiveTrackColor, setInactivectiveTrackColor] = useState(
-    theme === 'dark' ? '#aaa' : '#fa0',
-  );
-
-  useEffect(() => {
-    setActiveTrackColor(theme === 'dark' ? '#fa0' : '#aaa');
-    setInactivectiveTrackColor(theme === 'dark' ? '#aaa' : '#fa0');
-  }, [theme]);
 
   return (
     <Container>
@@ -29,13 +17,25 @@ const Home: React.FC = () => {
           : 'Please turn off! The light hurts my eyes'}
       </Title>
 
-      <Switch
-        activeTrackColor={activeTrackColor}
-        inactiveTrackColor={inactiveTrackColor}
-        thumbColor="#fff"
-        value={theme === 'dark'}
-        handleOnPress={toggleTheme}
-      />
+      <Switches>
+        <Switch
+          activeTrackColor="#fa0"
+          inactiveTrackColor="#aaa"
+          thumbColor="#fff"
+          label="Enable dark theme"
+          value={theme === 'dark'}
+          handleOnPress={toggleTheme}
+        />
+
+        <Switch
+          activeTrackColor="#007AFF"
+          inactiveTrackColor="#aaa"
+          thumbColor="#fff"
+          label="Enable light theme"
+          value={theme === 'light'}
+          handleOnPress={toggleTheme}
+        />
+      </Switches>
     </Container>
   );
 };
