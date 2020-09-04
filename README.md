@@ -20,3 +20,7 @@ toggle between aplication's themes, using **ThemeProvider** from `styled-compone
   // For Android's environment
   yarn android
 ```
+
+
+![Dark mode screenshot](/images/dark-mode.png)
+![Light mode screenshot](/images/light-mode.png)
