@@ -3,10 +3,18 @@ import Animated, {interpolateColors, spring} from 'react-native-reanimated';
 
 import {Container, Content, Dot} from './styles';
 
-const Switch: React.FC = ({
+interface Props {
+  handleOnPress: any;
+  activeTrackColor: string;
+  inactiveTrackColor: string;
+  thumbColor: string;
+  value: boolean;
+}
+
+const Switch: React.FC<Props> = ({
   handleOnPress,
   activeTrackColor,
-  inActiveTrackColor,
+  inactiveTrackColor,
   thumbColor,
   value,
 }) => {
@@ -39,7 +47,7 @@ const Switch: React.FC = ({
   const interpolateBackgroundColor = {
     backgroundColor: interpolateColors(switchTranslate, {
       inputRange: [0, 22],
-      outputColorRange: [inActiveTrackColor, activeTrackColor],
+      outputColorRange: [inactiveTrackColor, activeTrackColor],
     }),
   };
 
