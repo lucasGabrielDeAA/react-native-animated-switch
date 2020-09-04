@@ -7,7 +7,9 @@ toggle between aplication's themes, using **ThemeProvider** from `styled-compone
 
 ```
   // Downloading the project
-  git clone https://github.com/lucasGabrielDeAA/react-native-animated-switch.git && cd react-native-animated-switch
+  git clone https://github.com/lucasGabrielDeAA/react-native-animated-switch.git
+  
+  cd react-native-animated-switch
 
   // Installing dependencies
   yarn
