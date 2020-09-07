@@ -2,9 +2,9 @@ import React from 'react';
 
 import {Container, Title, Switches} from './styles';
 
-import Switch from '../../components/Switch';
+import Switch from '~/components/Switch';
 
-import {useTheme} from '../../hooks/useTheme';
+import {useTheme} from '~/hooks/useTheme';
 
 const Home: React.FC = () => {
   const {toggleTheme, theme} = useTheme();
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     <Container>
       <Title>
         {theme === 'dark'
-          ? 'Join the dark side'
+          ? 'Welcome to the dark side'
           : 'Please turn off! The light hurts my eyes'}
       </Title>
 
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
           activeTrackColor="#fa0"
           inactiveTrackColor="#aaa"
           thumbColor="#fff"
-          label="Enable dark theme"
+          label={theme === 'dark' ? 'Dark theme enabled' : 'Enable dark theme'}
           value={theme === 'dark'}
           handleOnPress={toggleTheme}
         />
@@ -31,7 +31,9 @@ const Home: React.FC = () => {
           activeTrackColor="#007AFF"
           inactiveTrackColor="#aaa"
           thumbColor="#fff"
-          label="Enable light theme"
+          label={
+            theme === 'light' ? 'Light theme enabled' : 'Enable light theme'
+          }
           value={theme === 'light'}
           handleOnPress={toggleTheme}
         />

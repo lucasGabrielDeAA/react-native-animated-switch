@@ -2,8 +2,8 @@ import React, {createContext, useState, useContext, useCallback} from 'react';
 
 import {ThemeProvider as CustomThemeProvider} from 'styled-components';
 
-import Dark from '../styles/themes/dark';
-import Light from '../styles/themes/light';
+import Dark from '~/styles/themes/dark';
+import Light from '~/styles/themes/light';
 
 interface ThemeContextData {
   toggleTheme: any;

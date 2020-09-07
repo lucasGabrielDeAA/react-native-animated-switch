@@ -2,9 +2,9 @@ import React from 'react';
 import {StatusBar} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {useTheme} from './hooks/useTheme';
+import {useTheme} from '~/hooks/useTheme';
 
-import Home from './pages/Home';
+import Home from '~/pages/Home';
 
 const Stack = createStackNavigator();
 
