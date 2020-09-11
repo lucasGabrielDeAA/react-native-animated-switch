@@ -65,16 +65,6 @@ const Switch: React.FC<Props> = ({
         <Content style={interpolateBackgroundColor}>
           <Dot
             style={[
-              {
-                elevation: 4,
-                shadowColor: '#000',
-                shadowOffset: {
-                  width: 0,
-                  height: 2,
-                },
-                shadowOpacity: 0.23,
-                shadowRadius: 2.62,
-              },
               {backgroundColor: thumbColor},
               {
                 transform: [

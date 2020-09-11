@@ -25,6 +25,11 @@ export const Content = styled(Animated.View)`
 
 export const Dot = styled(Animated.View)`
   border-radius: 24px;
+  elevation: 4;
+  shadow-color: #000;
+  shadow-offset: { height: 2, width: 0 };
+  shadow-opacity: 0.23;
+  shadow-radius: 2.62;
   height: 24px;
   width: 24px;
 `;
