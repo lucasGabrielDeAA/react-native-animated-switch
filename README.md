@@ -3,6 +3,8 @@
 This repo contains a implementation of a native switch using `react-native-animated`, and `typescript` for
 toggle between aplication's themes, using **ThemeProvider** from `styled-components`.
 
+Based on [React Native Reanimated Switch](https://medium.com/timeless/react-native-reanimated-switch-83c331af7877)
+
 **Installation**
 
 ```
